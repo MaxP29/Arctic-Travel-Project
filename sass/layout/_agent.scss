@@ -1,0 +1,182 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.agent {
+  &__container {
+    display: grid;
+    grid-template-columns: 60rem 1fr;
+    margin: 0 6rem 0 6rem;
+    column-gap: 10.6rem;
+  }
+
+  &__text {
+    &-heading {
+      display: inline-block;
+      margin-top: 5.8rem;
+      font-size: 4rem;
+      font-weight: $font-semi;
+      line-height: 1.175;
+    }
+
+    &-info {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
+
+      &-desc {
+        font-size: 1.6rem;
+        font-weight: $font-light;
+        line-height: 1.375;
+        letter-spacing: 0.03rem;
+      }
+    }
+  }
+
+  &__button {
+    letter-spacing: 0.0375rem;
+  }
+}
+
+@include respond(1350) {
+  .agent {
+    &__container {
+      gap: 8rem;
+    }
+
+    &__image img {
+      scale: 0.8;
+    }
+  }
+}
+
+@include respond(1160) {
+  .agent {
+    &__container {
+      gap: 6rem;
+    }
+
+    &__image {
+      & img {
+        scale: 0.7;
+      }
+    }
+  }
+}
+
+@include respond(950) {
+  .agent {
+    &__container {
+      gap: 0rem;
+      grid-template-columns: 60rem 1fr;
+      column-gap: 0;
+    }
+
+    &__image {
+      & img {
+        scale: 0.5;
+      }
+    }
+  }
+}
+
+@include respond(mobile-725) {
+  .agent {
+    &__container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__text {
+      &-heading {
+        margin-top: 0;
+        text-align: left;
+        letter-spacing: 0.06rem;
+
+        & :first-child {
+          margin-top: 2rem;
+        }
+      }
+
+      &-info {
+        flex-direction: column;
+        align-items: baseline;
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    &__image {
+      & img {
+        height: 63.6rem;
+        width: 60rem;
+      }
+    }
+
+    &__button {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+@include respond(mobile-550) {
+  .agent {
+    &__text {
+      &-heading {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}
+
+@include respond(myphone) {
+  .agent {
+    &__text {
+      &-heading {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@include respond(400-900) {
+  .agent {
+    &__container {
+      margin: 0 3rem;
+    }
+  }
+}
+
+@include respond(mobile) {
+  .agent {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      margin: 0 3rem;
+    }
+
+    &__text {
+      &-heading {
+        font-size: 3rem;
+        letter-spacing: 0.06rem;
+
+        & :first-child {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    &__image {
+      & img {
+        height: 63.6rem;
+        width: 60rem;
+      }
+    }
+
+    &__button {
+      margin-bottom: 5rem;
+    }
+  }
+}
