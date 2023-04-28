@@ -12,7 +12,7 @@
 }
 
 @mixin regionButton($rotate) {
-  content: url("Desktop/icons&svgs/Arrow.svg");
+  content: url("/Desktop/icons&svgs/Arrow.svg");
   transform: rotate($rotate);
   @include buttonContent;
 }
