@@ -3,7 +3,7 @@
 
 .header {
   height: 87.6rem;
-  background-image: url("Desktop/hero/Hero-Image@2x.png");
+  background-image: url("/Desktop/hero/Hero-Image@2x.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: -8rem;
@@ -78,7 +78,7 @@
   }
 
   &::after {
-    content: url("Desktop/icons&svgs/Keep-Scrolling.svg");
+    content: url("/Desktop/icons&svgs/Keep-Scrolling.svg");
     position: absolute;
     right: 4.3%;
     top: 14.5%;
@@ -193,7 +193,7 @@
 
 @include respond(mobile-725) {
   .header {
-    background-image: url("Mobile/hero/Hero-Image@2x.png") no-repeat;
+    background: url("/Mobile/hero/Hero-Image@2x.png") no-repeat;
     height: 120rem;
     background-size: cover;
     background-position-y: -6rem;
@@ -449,7 +449,7 @@
 
 @include respond(mobile) {
   .header {
-    background: url("Mobile/hero/Hero-Image@2x.png") no-repeat;
+    background: url("/Mobile/hero/Hero-Image@2x.png") no-repeat;
     height: 79.6rem;
     background-size: cover;
     background-position-y: 0rem;
