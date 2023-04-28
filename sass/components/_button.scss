@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+
+.button {
+  font-family: inherit;
+  color: $color-white;
+  background-color: $color-purple;
+  font-size: 1.6rem;
+  padding: 1.6rem 3rem;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+
+  &-regions {
+    background-color: $color-blue;
+  }
+}

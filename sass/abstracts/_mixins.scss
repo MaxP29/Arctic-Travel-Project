@@ -1,0 +1,125 @@
+@use "./variables" as *;
+
+@mixin buttonContent() {
+  color: $color-white;
+  border: 1.5px solid $color-black;
+  position: absolute;
+  padding: 0.97rem 1.48rem;
+  border-radius: 100rem;
+  filter: brightness(0%);
+  z-index: 100;
+  cursor: pointer;
+}
+
+@mixin regionButton($rotate) {
+  content: url("Desktop/icons&svgs/Arrow.svg");
+  transform: rotate($rotate);
+  @include buttonContent;
+}
+
+@mixin ArrowButton($rotate) {
+  transform: rotate($rotate);
+  @include buttonContent;
+}
+
+@mixin MobileArrowButton($rotate) {
+  @include ArrowButton($rotate);
+  position: absolute;
+  top: 58%;
+  padding: 1rem 1.5rem;
+  scale: 0.8;
+}
+
+// Media Queries
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 22.5em) and (max-height: 47.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == 380-900 {
+    @media only screen and (max-width: 23.75em) and (max-height: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == 400-900 {
+    @media only screen and (max-width: 25em) and (max-height: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == myphone-760 {
+    @media only screen and (max-width: 28.125em) and (max-height: 47.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == myphone {
+    @media only screen and (max-width: 28.125em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile-550 {
+    @media only screen and (max-width: 34.375em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile-650 {
+    @media only screen and (max-width: 40.625em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile-725 {
+    @media only screen and (max-width: 45.3125em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == 750 {
+    @media only screen and (max-width: 46.875em) {
+      @content;
+    }
+  }
+  @if $breakpoint == 850 {
+    @media only screen and (max-width: 53.125em) {
+      @content;
+    }
+  }
+  @if $breakpoint == 950 {
+    @media only screen and (max-width: 59.375em) {
+      @content;
+    }
+  }
+  @if $breakpoint == 1060 {
+    @media only screen and (max-width: 66.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == 1120 {
+    @media only screen and (max-width: 70em) {
+      @content;
+    }
+  }
+  @if $breakpoint == 1160 {
+    @media only screen and (max-width: 72.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == 1220 {
+    @media only screen and (max-width: 76.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == 1350 {
+    @media only screen and (max-width: 84.4em) {
+      @content;
+    }
+  }
+}

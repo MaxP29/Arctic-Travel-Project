@@ -1,0 +1,149 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.unleash {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 8rem 6rem 12rem 6rem;
+  column-gap: 4.1rem;
+
+  &__heading {
+    &-header {
+      font-family: inherit;
+      font-size: 4rem;
+      font-weight: $font-semi;
+      margin-top: 5.1rem;
+      letter-spacing: 0.08rem;
+      text-align: left;
+      margin-bottom: 2rem;
+      line-height: 1.175;
+    }
+
+    &-text {
+      font-family: inherit;
+      font-size: 2rem;
+      text-align: left;
+      font-weight: $font-regular;
+      line-height: 1.36;
+      letter-spacing: 0.034rem;
+    }
+  }
+
+  &__action {
+    &-text {
+      margin-top: 9.2rem;
+      font-size: 1.6rem;
+      font-weight: $font-light;
+      line-height: 1.45;
+      letter-spacing: 0.033rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+
+    &-button {
+      letter-spacing: 0.0375rem;
+    }
+  }
+
+  &__image {
+    &-item {
+      height: 39.8rem;
+    }
+  }
+}
+
+@include respond(mobile-725) {
+  .unleash {
+    display: flex;
+    flex-direction: column;
+    margin: 0 6rem;
+
+    &__heading {
+      &-text {
+        font-size: 1.8rem;
+      }
+    }
+
+    &__image img {
+      height: 50rem;
+      margin-top: 6rem;
+    }
+
+    &__action {
+      &-text {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
+
+@include respond(mobile-650) {
+  .unleash {
+    &__image img {
+      height: 45rem;
+    }
+  }
+}
+
+@include respond(mobile-550) {
+  .unleash {
+    &__heading {
+      &-header {
+        font-size: 3.4rem;
+      }
+    }
+    &__image img {
+      height: 32rem;
+    }
+  }
+}
+
+@include respond(myphone) {
+  .unleash {
+    &__image img {
+      height: 32rem;
+    }
+  }
+}
+
+@include respond(400-900) {
+  .unleash {
+    margin: 0 3rem;
+    &__heading {
+      &-header {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@include respond(mobile) {
+  .unleash {
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+      &-header {
+        margin-top: 5rem;
+      }
+
+      &-text {
+        font-size: 1.8rem;
+      }
+    }
+
+    &__image {
+      margin-top: 4rem;
+      & img {
+        height: 30rem;
+        margin-top: 0;
+      }
+    }
+
+    &__action {
+      &-text {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

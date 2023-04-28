@@ -1,0 +1,211 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.section {
+  &-regions {
+    height: 70.4rem;
+    background-color: $color-light-blue;
+    margin-top: -17.5rem;
+    border-top-right-radius: 8rem;
+    border-top-left-radius: 8rem;
+  }
+
+  &-unleash {
+    height: 47.8rem;
+  }
+
+  &-recommended {
+    height: 69.8rem;
+  }
+
+  &-agent {
+    height: 60.9rem;
+    margin-bottom: 8.3rem;
+  }
+
+  &-ultimate {
+    height: 46.8rem;
+    background-color: $color-light-blue;
+    border-top-right-radius: 8rem;
+    border-top-left-radius: 8rem;
+    margin-bottom: 4rem;
+  }
+}
+
+// Sections Media Queries
+
+@include respond(1350) {
+  .section {
+    &-regions {
+      margin-top: -12rem;
+    }
+  }
+}
+
+@include respond(1060) {
+  .section {
+    &-agent {
+      margin-bottom: 18.3rem;
+    }
+  }
+}
+
+@include respond(950) {
+  .section {
+    &-recommended {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include respond(mobile-725) {
+  .section {
+    &-regions {
+      height: 130rem;
+      margin-top: -22rem;
+    }
+
+    &-unleash {
+      height: 120rem;
+      margin-bottom: 2.3rem;
+    }
+
+    &-agent {
+      height: 116rem;
+      margin-bottom: 0;
+    }
+
+    &-ultimate {
+      position: relative;
+      height: 55.1rem;
+      border-top-right-radius: 6rem;
+      border-top-left-radius: 6rem;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@include respond(mobile-650) {
+  .section {
+    &-regions {
+      height: 120rem;
+      margin-top: -26rem;
+    }
+
+    &-unleash {
+      height: 102.5rem;
+      margin-bottom: 18rem;
+    }
+
+    &-agent {
+      height: 124.3rem;
+    }
+  }
+}
+
+@include respond(mobile-550) {
+  .section {
+    &-regions {
+      height: 210rem;
+    }
+
+    &-unleash {
+      height: 102.5rem;
+      margin-bottom: 3rem;
+    }
+
+    &-agent {
+      height: 124.3rem;
+    }
+
+    &-recommended {
+      height: 67rem;
+    }
+
+    &-ultimate {
+      height: 44rem;
+    }
+  }
+}
+
+@include respond(myphone) {
+  .section {
+    &-unleash {
+      height: 105rem;
+      margin-bottom: 10rem;
+    }
+
+    &-agent {
+      margin-bottom: 4rem;
+    }
+
+    &-ultimate {
+      height: 50.1rem;
+    }
+  }
+}
+
+@include respond(myphone-760) {
+  .section {
+    &-regions {
+      height: 200rem;
+    }
+  }
+}
+
+@media (max-width: 26.25em) {
+  .section {
+    &-unleash {
+      margin-bottom: 16rem;
+    }
+
+    &-agent {
+      margin-bottom: 10rem;
+    }
+  }
+}
+
+@include respond(400-900) {
+  .section {
+    &-regions {
+      height: 200rem;
+      margin-top: -30rem;
+    }
+
+    &-unleash {
+      height: 94rem;
+    }
+
+    &-agent {
+      height: 118rem;
+    }
+  }
+}
+
+@include respond(mobile) {
+  .section {
+    &-regions {
+      height: 208.5rem;
+      margin-top: -16.1rem;
+    }
+
+    &-unleash {
+      height: 102.5rem;
+      margin-bottom: 0;
+    }
+
+    &-agent {
+      height: 124.3rem;
+      margin-bottom: 1.6rem;
+    }
+
+    &-recommended {
+      height: 66.3rem;
+      margin-top: 7.8rem;
+    }
+
+    &-ultimate {
+      margin-bottom: 4.4rem;
+    }
+  }
+}

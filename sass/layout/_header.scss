@@ -1,0 +1,515 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+  height: 87.6rem;
+  background-image: url("Desktop/hero/Hero-Image@2x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -8rem;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo,
+  &__links {
+    margin: 4rem 6rem 0 6rem;
+  }
+
+  &__links {
+    display: inherit;
+    gap: 5rem;
+
+    & :first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-mobile {
+      display: none;
+    }
+
+    &-item {
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: $color-black;
+      align-self: center;
+      letter-spacing: 0.032rem;
+      font-weight: $font-medium;
+
+      & img {
+        margin-right: 1rem;
+      }
+
+      &-icon {
+        margin-right: 1rem;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &-title {
+      font-size: 5rem;
+      margin: 37.5rem 45rem 2rem 45rem;
+      line-height: 1.17;
+      font-weight: $font-bold;
+    }
+
+    &-paragraph {
+      font-size: 2rem;
+      margin: 0 45rem 4rem 45rem;
+      line-height: 1.3;
+      font-weight: $font-regular;
+    }
+  }
+
+  &::after {
+    content: url("Desktop/icons&svgs/Keep-Scrolling.svg");
+    position: absolute;
+    right: 4.3%;
+    top: 14.5%;
+  }
+
+  &__navigation {
+    &-mobile {
+      display: none;
+    }
+  }
+}
+
+// Media Queries START
+
+@include respond(1350) {
+  .header {
+    &__text {
+      &-title {
+        margin-top: 42rem;
+      }
+    }
+
+    &::after {
+      scale: 0.9;
+      top: 15%;
+    }
+  }
+}
+
+@include respond(1220) {
+  .header {
+    &::after {
+      scale: 0.8;
+    }
+
+    &__logo {
+      scale: 0.9;
+    }
+  }
+}
+
+@include respond(1160) {
+  .header {
+    &::after {
+      scale: 0.7;
+    }
+
+    &__links {
+      & :first-child {
+        height: 2rem;
+      }
+    }
+  }
+
+  .scale {
+    transform: translate(-50%, -60%);
+  }
+}
+
+@include respond(1060) {
+  .header {
+    &::after {
+      top: 14.5%;
+    }
+  }
+}
+
+@include respond(950) {
+  .header {
+    &__logo {
+      scale: 0.75;
+    }
+  }
+}
+
+@include respond(850) {
+  .header {
+    &::after {
+      top: 14.2%;
+      scale: 0.6;
+    }
+
+    &__text {
+      &-title {
+        margin-top: 38rem;
+      }
+    }
+  }
+
+  .scale {
+    transform: translate(-60%, -60%);
+  }
+}
+
+@include respond(750) {
+  .header {
+    &__text {
+      &-title {
+        margin-top: 34rem;
+      }
+    }
+
+    &__logo {
+      scale: 0.6;
+    }
+  }
+
+  .scale {
+    transform: translate(-70%, -60%);
+  }
+}
+
+@include respond(mobile-725) {
+  .header {
+    background-image: url("Mobile/hero/Hero-Image@2x.png") no-repeat;
+    height: 120rem;
+    background-size: cover;
+    background-position-y: -6rem;
+
+    &__logo {
+      scale: 1;
+      margin: 2rem 0 0 3rem;
+    }
+
+    &__links {
+      display: none;
+
+      &-mobile {
+        display: contents;
+
+        &-icon,
+        &-icon::before,
+        &-icon::after {
+          display: inline-block;
+          width: 4rem;
+          height: 0.3rem;
+          background-color: $color-black;
+          z-index: 10;
+        }
+
+        &-icon {
+          position: relative;
+          top: 1.5rem;
+          right: 6rem;
+        }
+
+        &-icon::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: -1.2rem;
+        }
+
+        &-icon::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 1.2rem;
+        }
+      }
+    }
+
+    &__text {
+      &-title {
+        margin: 64rem 16rem 1rem 16rem;
+        font-size: 4rem;
+        font-weight: $font-semi;
+      }
+
+      &-paragraph {
+        font-size: 1.8rem;
+        margin: 0 16rem 8.5rem 16rem;
+        font-weight: $font-regular;
+      }
+    }
+
+    &::after {
+      top: 13.8%;
+      left: 39%;
+      width: fit-content;
+      height: fit-content;
+      scale: 0.8;
+    }
+
+    &__navigation {
+      &-mobile {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        height: 100%;
+        width: 100vw;
+        margin-top: -8.2rem;
+        background-color: rgba($color-white, 0.8);
+        backdrop-filter: blur(1rem);
+        transform: translateX(100%);
+        transition: transform 1s;
+        z-index: 9;
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+        margin-top: 40%;
+        list-style: none;
+        font-size: 3rem;
+      }
+
+      &-links {
+        text-decoration: none;
+        color: $color-black;
+      }
+    }
+  }
+
+  .scale {
+    scale: 1.2;
+    transform: translate(-15%, -15%);
+  }
+}
+
+@include respond(mobile-650) {
+  .header {
+    height: 120rem;
+
+    &__text {
+      &-title {
+        margin: 54rem 12rem 1rem 12rem;
+      }
+
+      &-paragraph {
+        margin: 0 16rem 0rem 16rem;
+      }
+    }
+
+    &::after {
+      top: 13.3%;
+    }
+  }
+
+  .scale {
+    scale: 1.2;
+    transform: translate(-20%, -15%);
+  }
+}
+
+@include respond(mobile-550) {
+  .header {
+    height: 110rem;
+
+    &__text {
+      &-title {
+        margin: 43rem 8rem 1rem 8rem;
+      }
+
+      &-paragraph {
+        margin: 0 8rem;
+      }
+    }
+
+    &::after {
+      top: 10.9%;
+      left: 35%;
+    }
+
+    &__navigation {
+      &-list {
+        margin-top: 55%;
+      }
+    }
+  }
+
+  .scale {
+    scale: 1;
+    transform: translate(-30%, -15%);
+  }
+}
+
+@include respond(myphone) {
+  .header {
+    height: 100rem;
+
+    &__text {
+      &-title {
+        margin: 36rem 8rem 1rem 8rem;
+        font-size: 3rem;
+      }
+    }
+
+    &::after {
+      top: 9.4%;
+      left: 33%;
+    }
+
+    &__navigation {
+      &-list {
+        margin-top: 65%;
+      }
+    }
+  }
+
+  .scale {
+    transform: translate(-45%, -15%);
+  }
+}
+
+@media (max-width: 26.25em) {
+  .header {
+    &::after {
+      top: 9.2%;
+      left: 30%;
+    }
+
+    &__links {
+      &-mobile {
+        &-icon,
+        &-icon::before,
+        &-icon::after {
+          width: 3rem;
+          height: 0.2rem;
+        }
+
+        &-icon {
+          top: 1.5rem;
+          right: 6rem;
+        }
+
+        &-icon::before {
+          top: -0.8rem;
+        }
+
+        &-icon::after {
+          top: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .scale {
+    transform: translate(-50%, -15%);
+  }
+}
+
+@include respond(400-900) {
+  .header {
+    &__text {
+      &-title {
+        margin: 34rem 6rem 1rem 6rem;
+      }
+
+      &-paragraph {
+        margin: 0 6rem;
+      }
+    }
+
+    &::after {
+      left: 30%;
+      top: 9%;
+    }
+
+    &__navigation {
+      &-list {
+        margin-top: 70%;
+      }
+    }
+  }
+}
+
+@include respond(mobile) {
+  .header {
+    background: url("Mobile/hero/Hero-Image@2x.png") no-repeat;
+    height: 79.6rem;
+    background-size: cover;
+    background-position-y: 0rem;
+
+    &__logo {
+      scale: 1;
+      margin: 2rem 0 0 3rem;
+    }
+
+    &__links {
+      display: none;
+
+      &-mobile {
+        &-icon,
+        &-icon::before,
+        &-icon::after {
+          width: 2.4rem;
+          height: 0.1rem;
+        }
+
+        &-icon {
+          top: 0.9rem;
+          right: 3rem;
+        }
+
+        &-icon::before {
+          top: -0.43rem;
+        }
+
+        &-icon::after {
+          top: 0.43rem;
+        }
+      }
+    }
+
+    &__text {
+      &-title {
+        margin: 32rem 3rem 1rem 3rem;
+        font-size: 3rem;
+        font-weight: $font-semi;
+      }
+
+      &-paragraph {
+        font-size: 1.8rem;
+        margin: 0 3rem 8.5rem 3rem;
+        font-weight: $font-regular;
+      }
+    }
+
+    &::after {
+      top: 8.1%;
+      left: 28%;
+      width: fit-content;
+      height: fit-content;
+      scale: 0.69;
+    }
+  }
+
+  .scale {
+    scale: 1;
+    transform: translate(-50%, -25%);
+  }
+}
