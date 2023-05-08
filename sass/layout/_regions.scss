@@ -1,0 +1,302 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.options {
+  display: inline-flex;
+  width: 53.3rem;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(4rem);
+  padding: 1.6rem 0;
+  background-color: $color-white;
+  margin: 0 43.3rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+
+  &__link {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: $color-black;
+    margin-right: 5rem;
+    letter-spacing: 0.04rem;
+  }
+
+  & :last-child {
+    margin-right: 2rem;
+  }
+
+  & :first-child {
+    padding: 1.6rem 3rem 1.6rem 3rem;
+    background-color: $color-blue;
+    color: $color-white;
+    border-radius: 10rem;
+    margin-right: 2rem;
+  }
+}
+
+.regions {
+  font-family: inherit;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  row-gap: 2.3rem;
+  column-gap: 2.5rem;
+  margin: 0 6rem;
+  padding: 2rem 2.7rem 3.6rem 2.6rem;
+  transform: translateY(4rem);
+  background-color: $color-white;
+  border-radius: 2rem;
+  position: relative;
+  max-width: 1400px;
+
+  &__place {
+    width: 20rem;
+
+    &-image {
+      margin-bottom: 1rem;
+      height: 20rem;
+    }
+
+    &-text {
+      display: inline-block;
+      font-size: 1.6rem;
+      font-weight: $font-regular;
+      letter-spacing: 0.033rem;
+    }
+  }
+}
+
+@media (min-width: 1700px) {
+  .options {
+    margin: 0 60rem;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1700px) {
+  .options {
+    margin: 0 55rem;
+  }
+}
+
+@include respond(over) {
+  .regions {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+  }
+}
+
+@include respond(1350) {
+  .regions {
+    padding-right: 0;
+    padding-left: 3.5rem;
+    column-gap: 0;
+  }
+
+  .options {
+    margin: 0 33%;
+  }
+}
+
+@include respond(1220) {
+  .regions {
+    grid-template-columns: repeat(4, 1fr);
+
+    &__place {
+      scale: 0.9;
+    }
+  }
+}
+
+@include respond(1120) {
+  .options {
+    margin: 0 30%;
+  }
+}
+
+@include respond(1060) {
+  .options {
+    margin: 0 33%;
+  }
+}
+
+@include respond(950) {
+  .options {
+    margin: 0 30%;
+  }
+}
+
+@include respond(mobile-725) {
+  .options {
+    margin: 4.6rem 16rem 0 16rem;
+    width: 40rem;
+
+    & :not(:first-child) {
+      display: none;
+    }
+
+    & :first-child {
+      margin: 0 auto;
+      padding: 0;
+      background-color: $color-white;
+      color: $color-black;
+      margin-top: 1.6rem;
+      font-size: 1.6rem;
+      font-weight: $font-medium;
+    }
+
+    & ::before {
+      @include regionButton(90deg);
+      left: 10%;
+      top: 30%;
+    }
+
+    & ::after {
+      @include regionButton(270deg);
+      right: 10%;
+      top: 30%;
+    }
+  }
+
+  .regions {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 2rem;
+    padding: 2.8rem 0.6rem 2.5rem 3rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    row-gap: 3.9rem;
+    column-gap: auto;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+
+    &__place {
+      scale: 1;
+
+      &-text {
+        font-size: 1.6rem;
+        font-weight: $font-regular;
+      }
+    }
+  }
+}
+
+@include respond(mobile-650) {
+  .options {
+    margin: 4.6rem 16rem 0 15rem;
+    width: 34rem;
+  }
+
+  .regions {
+    margin: 0 4rem;
+    padding: 2.8rem 0rem 2.5rem 1rem;
+
+    &__place {
+      margin: 0 2rem;
+      & img {
+        height: 16rem;
+      }
+    }
+  }
+}
+
+@include respond(mobile-550) {
+  .options {
+    margin: 4.6rem 6rem 0 10rem;
+    width: 34rem;
+  }
+
+  .regions {
+    grid-template-columns: 1fr;
+    margin: auto 1rem;
+    margin-left: 10rem;
+    width: 34rem;
+    row-gap: 2rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+
+    &__place {
+      margin-left: 2rem;
+
+      & img {
+        height: 20rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 31.25em) {
+  .options {
+    margin: 4.6rem 14rem 0 7rem;
+  }
+
+  .regions {
+    margin-left: 7rem;
+  }
+}
+
+@include respond(myphone) {
+  .options {
+    margin: 4.6rem 6rem 0 6rem;
+    width: 34rem;
+  }
+
+  .regions {
+    margin-left: 6rem;
+  }
+}
+
+@media (max-width: 26.25em) {
+  .options {
+    margin-left: 3rem;
+  }
+
+  .regions {
+    margin-left: 3rem;
+  }
+}
+
+@include respond(400-900) {
+  .regions {
+    &__place {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+@include respond(380-900) {
+  .regions {
+    margin-left: 2rem;
+  }
+
+  .options {
+    margin-left: 2rem;
+  }
+}
+
+@include respond(mobile) {
+  .options {
+    margin-top: 4.6rem;
+    margin: 4.6rem 3rem 0 3rem;
+    width: 30rem;
+  }
+
+  .regions {
+    width: auto;
+    grid-template-columns: 1fr;
+    margin: 0 3rem;
+    padding: 2.8rem 0.6rem 2.5rem 0.6rem;
+    row-gap: 3.9rem;
+
+    &__place {
+      scale: 1;
+      margin: 0;
+
+      & img {
+        margin-bottom: 0.8rem;
+      }
+
+      &-text {
+        font-size: 1.6rem;
+        font-weight: $font-regular;
+      }
+    }
+  }
+}
